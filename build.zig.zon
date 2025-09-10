@@ -1,17 +1,16 @@
 .{
     .name = .implot,
     .fingerprint = 0x60641c58939aa951,
-    .minimum_zig_version = "0.14.0",
-    .version = "0.0.0",
+    .minimum_zig_version = "0.0.0",
+    .version = "0.16.0",
     .dependencies = .{
         .dear_imgui = .{
-            .url = "https://github.com/Games-by-Mason/dear_imgui_zig/archive/7cd8f4c8c49666315504881559cb3a070fb4feb0.tar.gz",
-            .hash = "dear_imgui-0.0.0-vUBA9cYnNQA_KlfAag3cmqfwMUBTGplSJ-exOgf20OQU",
+            .url = "git+https://github.com/Games-By-Mason/dear_imgui_zig#828a3b7a9ed4605bd7c0cc549455d90575b7fa16",
+            .hash = "dear_imgui-0.0.0-vUBA9cG6OgAIoCnrE65xGmpy72iy3iCzd6d3SIUXwTkI",
         },
         .implot = .{
-            // Mirror available: https://github.com/Games-by-Mason/implot
-            .url = "https://github.com/epezent/implot/archive/refs/tags/v0.16.tar.gz",
-            .hash = "122056e9b7ce4f34fc69e6973792b46f96061f5546a13dcb59ffe8c180de0b24333a",
+            .url = "git+https://github.com/epezent/implot#3da8bd34299965d3b0ab124df743fe3e076fa222",
+            .hash = "N-V-__8AAEp-CgAgvyx1wqLjwzz_RQC5EwY-tJLdzjp6ITbN",
         },
     },
 

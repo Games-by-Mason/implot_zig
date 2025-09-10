@@ -23,10 +23,12 @@ pub fn build(b: *std.Build) void {
     });
 
     // Create the library
-    const lib = b.addStaticLibrary(.{
+    const lib = b.addLibrary(.{
         .name = "implot",
-        .target = target,
-        .optimize = optimize_external,
+        .root_module = b.createModule(.{
+            .target = target,
+            .optimize = optimize_external,
+        }),
     });
 
     // Add the headers and dependencies
@@ -57,8 +59,7 @@ pub fn build(b: *std.Build) void {
     // Install the library
     b.installArtifact(lib);
 
-    // Expose the library as a Zig module, so that multiple modules can depend on it without
-    // duplication.
+    // Expose the library as a Zig module
     const module = b.addModule("implot", .{
         .root_source_file = b.path("src/root.zig"),
         .target = target,
