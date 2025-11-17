@@ -1,10 +1,5 @@
 const std = @import("std");
-
-const flags: []const []const u8 = &.{
-    "-fno-exceptions",
-    "-fno-rtti",
-    "-fno-threadsafe-statics",
-};
+const dear_imgui = @import("dear_imgui");
 
 pub fn build(b: *std.Build) void {
     // Compilation options
@@ -17,7 +12,7 @@ pub fn build(b: *std.Build) void {
 
     // Get the upstream code
     const upstream = b.dependency("implot", .{});
-    const dear_imgui = b.dependency("dear_imgui", .{
+    const dear_imgui_dep = b.dependency("dear_imgui", .{
         .target = target,
         .optimize = optimize,
     });
@@ -34,7 +29,7 @@ pub fn build(b: *std.Build) void {
     // Add the headers and dependencies
     lib.addIncludePath(upstream.path(""));
     lib.installHeadersDirectory(upstream.path("."), "", .{});
-    lib.linkLibrary(dear_imgui.artifact("dear_imgui"));
+    lib.linkLibrary(dear_imgui_dep.artifact("dear_imgui"));
     lib.linkLibC();
 
     // Add the main source
@@ -45,14 +40,14 @@ pub fn build(b: *std.Build) void {
             "implot_items.cpp",
             "implot_demo.cpp",
         },
-        .flags = flags,
+        .flags = dear_imgui.flags,
     });
 
     // Add the C bindings to the main library
     lib.addCSourceFiles(.{
         .root = b.path("src"),
         .files = &.{"cimplot.cpp"},
-        .flags = flags,
+        .flags = dear_imgui.flags,
     });
     lib.installHeadersDirectory(b.path("src"), "", .{});
 
@@ -65,6 +60,6 @@ pub fn build(b: *std.Build) void {
         .target = target,
         .optimize = optimize,
     });
-    module.addImport("dear_imgui", dear_imgui.module("dear_imgui"));
+    module.addImport("dear_imgui", dear_imgui_dep.module("dear_imgui"));
     module.linkLibrary(lib);
 }
