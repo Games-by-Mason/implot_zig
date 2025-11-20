@@ -5,8 +5,8 @@
     .version = "0.16.0",
     .dependencies = .{
         .dear_imgui = .{
-            .url = "git+https://github.com/Games-By-Mason/dear_imgui_zig#f5ed86c136bc43e56a31a5a89f18627bc0c6df95",
-            .hash = "dear_imgui-0.0.0-vUBA9eE0nwCR-9lUQCyoIe1TCEF7K6lpI8B_t-LGrHaV",
+            .url = "git+https://github.com/Games-By-Mason/dear_imgui_zig#826a993c0deba799dc98d0b95ee6a3e56a434f39",
+            .hash = "dear_imgui-0.0.0-vUBA9cA2nwAoGlLirIhCQ7E-oiVJxTMwzmx7VgkRlGKJ",
         },
         .implot = .{
             .url = "git+https://github.com/epezent/implot#3da8bd34299965d3b0ab124df743fe3e076fa222",
