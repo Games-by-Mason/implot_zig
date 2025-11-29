@@ -6,3 +6,7 @@ In the future if more of the library is needed and hand porting becomes cumberso
 
 ## How to change versions
 Update `build.zig.zon`, and then if the headers changed in an incompatible way, manually update the C port in `src`.
+
+## Which version of Zig is targeted?
+
+See [build.zig.con](/build.zig.zon). For previous Zig versions, see [releases](https://github.com/Games-by-Mason/implot_zig/releases).

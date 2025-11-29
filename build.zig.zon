@@ -2,7 +2,7 @@
     .name = .implot,
     .fingerprint = 0x60641c58939aa951,
     .minimum_zig_version = "0.15.1",
-    .version = "0.16.0",
+    .version = "0.1.0",
     .dependencies = .{
         .dear_imgui = .{
             .url = "git+https://github.com/Games-By-Mason/dear_imgui_zig#826a993c0deba799dc98d0b95ee6a3e56a434f39",
