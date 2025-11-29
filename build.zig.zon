@@ -1,12 +1,12 @@
 .{
     .name = .implot,
     .fingerprint = 0x60641c58939aa951,
-    .minimum_zig_version = "0.15.1",
+    .minimum_zig_version = "0.16.0-dev.1484+d0ba6642b",
     .version = "0.1.0",
     .dependencies = .{
         .dear_imgui = .{
-            .url = "git+https://github.com/Games-By-Mason/dear_imgui_zig#826a993c0deba799dc98d0b95ee6a3e56a434f39",
-            .hash = "dear_imgui-0.0.0-vUBA9cA2nwAoGlLirIhCQ7E-oiVJxTMwzmx7VgkRlGKJ",
+            .url = "git+https://github.com/Games-By-Mason/dear_imgui_zig#241b2ee6a4f532bfc4fb5a40e5a338c6da8314c6",
+            .hash = "dear_imgui-1.0.0-vUBA9QQ5nwDp1ic1w-thcthJZFKnpuF2SbkqzxyBV-rm",
         },
         .implot = .{
             .url = "git+https://github.com/epezent/implot#3da8bd34299965d3b0ab124df743fe3e076fa222",
